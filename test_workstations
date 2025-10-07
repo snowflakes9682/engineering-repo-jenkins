@@ -1,0 +1,8 @@
+[servers]
+galactus.letsdochinese.com ansible_port=2200 ansible_python_interpreter=/usr/bin/python3 aws_server=true env=galactus
+
+[workstations:children]
+workstations_all
+
+[workstations_all]
+10.111.64.244 ansible_port=22

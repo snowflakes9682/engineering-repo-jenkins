@@ -1,0 +1,10 @@
+[workstations]
+10.111.64.152 ansible_port=5986
+10.111.33.183 ansible_port=5986
+
+[workstations:vars]
+ansible_connection=winrm
+ansible_winrm_cert_pem=/home/friday/windows_ansible_cert/cert.pem
+ansible_winrm_cert_key_pem=/home/friday/windows_ansible_cert/cert_key.pem
+ansible_winrm_transport=certificate
+ansible_winrm_server_cert_validation=ignore

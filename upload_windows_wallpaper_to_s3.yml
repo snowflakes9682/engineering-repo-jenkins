@@ -1,0 +1,11 @@
+---
+- name: Upload new wallpaper to S3
+  hosts: localhost
+  connection: local
+  remote_user: itops
+  become: yes
+  gather_facts: no  
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  roles:
+    - upload_windows_wallpaper_to_s3

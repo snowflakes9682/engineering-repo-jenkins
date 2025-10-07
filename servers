@@ -1,0 +1,2 @@
+[agent_workstation_monitoring]
+galactus.letsdochinese.com ansible_port=2200 ansible_python_interpreter=/usr/bin/python3 aws_server=true env=galactus

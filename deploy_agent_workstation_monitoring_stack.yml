@@ -1,0 +1,14 @@
+---
+- name: Deploy Monitoring Stack
+  hosts: agent_workstation_monitoring
+  connection: local
+  remote_user: friday
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: get_user_id
+      vars:
+        user: azola
+    - grafana
+    - prometheus
+    - alertmanager

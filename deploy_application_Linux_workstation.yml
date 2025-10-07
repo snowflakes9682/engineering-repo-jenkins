@@ -1,0 +1,8 @@
+---
+- name: Deploy applitions to Linux workstation
+  hosts: workstations
+  gather_facts: true
+  remote_user: itops
+  become: yes
+  roles: 
+    - workstation_setup

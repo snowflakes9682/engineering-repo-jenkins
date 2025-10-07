@@ -1,0 +1,7 @@
+- name: Setup Crowdstrike on Windows workstation
+  hosts: workstations
+  gather_facts: true
+  become_user: itops
+  become_method: runas
+  roles: 
+    - workstation_setup

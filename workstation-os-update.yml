@@ -1,0 +1,9 @@
+---
+- name: workstation os update
+  hosts: '{{ location }}'
+  remote_user: itops
+  become: yes
+  gather_facts: true
+
+  roles: 
+    - workstation_os_update

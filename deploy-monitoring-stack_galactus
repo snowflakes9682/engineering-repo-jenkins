@@ -1,0 +1,23 @@
+pipeline {
+    agent { 
+        label 'main'
+    }
+    stages {
+        stage('Checkout SCM') {
+            steps {
+                echo "Git pull"
+                git branch: 'main',
+                credentialsId: '07796ec9-cb8f-4164-a7fe-62ed3be7e0b8',
+                url: 'git@github.com:kjt01/workstation-playbook.git'
+            }
+        }
+        stage('Deploy Monitoring Stack') {
+            steps {
+                ansiblePlaybook credentialsId: '07796ec9-cb8f-4164-a7fe-62ed3be7e0b8', 
+                inventory: 'test', 
+                limit: 'agent_workstation_monitoring', 
+                playbook: 'deploy_agent_workstation_monitoring_stack.yml'
+            }
+        }
+    }
+}
